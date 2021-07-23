@@ -29,7 +29,7 @@
 </head>
 <body>
   <div class="container">
-    <form action="/board/boardWrite" method="post" enctype="multipart/form-data" id="frm">
+    <form action="/Board/boardWrite" method="post" enctype="multipart/form-data" id="frm">
       <div class="row">
         <!-- 제목 입력란 -->
         <div class="col-12">
