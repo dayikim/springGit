@@ -56,9 +56,9 @@ public class BoardDAO {
 		});
 	}
 
-	public int write(HttpSession session,String title,String contents) {
+	public int write(String session,BoardDTO dto) {
 		String sql = "insert into board values(board_seq.nextval,?,?,?,sysdate,0)";
-		return jdbc.update(sql,title,session,contents);
+		return jdbc.update(sql,dto.getTitle(),session,dto.getContents());
 	}
 	
 	public int deleteBoard(int seq) {

@@ -45,9 +45,10 @@ public class BoardController {
 	
 
 	@RequestMapping("boardWrite")
-	public String boardWrite(HttpSession session, String title, String contents) {
-		dao.write(session,title,contents);
-		return "redirect:boardList";
+	public String boardWrite(HttpSession session, BoardDTO dto) {
+		System.out.println(session+":"+dto.getTitle()+":"+dto.getContents());
+		dao.write((String)session.getAttribute("loginID"),dto);
+		return "redirect:/Board/boardlist";
 	}
 	
 	@RequestMapping("boardDelete")
