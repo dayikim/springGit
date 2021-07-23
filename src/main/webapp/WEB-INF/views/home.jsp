@@ -99,7 +99,7 @@ $(function(){
 
 		</c:when>
 		<c:otherwise>
-				<form action="/customer/LoginProc" method="post">
+				<form action="/customer/loginProc" method="post">
 
 					<table border=1 align=center>
 						<tr>
