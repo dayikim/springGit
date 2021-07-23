@@ -425,6 +425,15 @@ a {
     resize: vertical;
 }
 </style>
+<script>
+$(function(){
+	$("#wirte").on("click",function(){
+		location.href="/Board/write";
+	})
+
+})
+	
+</script>
 
 
 </head>
@@ -462,7 +471,7 @@ a {
 							</div>
 							<div class="board_page">
 								<div class="bt_wrap">
-									<button >글쓰기</button>
+									<button id="wirte">글쓰기</button>
 								</div>								
 							</div>
 						</div>

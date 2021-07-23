@@ -38,6 +38,11 @@ public class BoardController {
 		return "/board/view";
 	}
 	
+	@RequestMapping("write")
+	public String write() {
+		return "/board/boardWrite";
+	}
+	
 
 	@RequestMapping("boardWrite")
 	public String boardWrite(HttpSession session, String title, String contents) {
