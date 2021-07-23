@@ -449,13 +449,14 @@ a {
 								<c:forEach var="boardAll" items="${boardAll}">
 									<div>
 										<input type="hidden" class="num" name="board_seq" value="${boardAll.seq}">
+										<div class="num">${boardAll.seq}</div>
 										<div class="title">
 											<a
-												href="">${boardAll.title}</a>
+												href="/Board/post?seq=${boardAll.seq}">${boardAll.title}</a>
 										</div>
 										<div class="writer">${boardAll.writer}</div>
-										<div class="date">${boardAll.reg_date}</div>
-										<div class="count">${boardAll.view}</div>
+										<div class="date">${boardAll.write_date}</div>
+										<div class="count">${boardAll.view_count}</div>
 									</div>
 								</c:forEach>
 							</div>
