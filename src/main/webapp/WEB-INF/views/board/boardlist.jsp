@@ -468,7 +468,7 @@ a {
 										<input type="hidden" class="num" name="board_seq" value="${boardAll.seq}">
 										<div class="title">
 											<a
-												href="${pageContext.request.contextPath}/noticeView.notice?notice_seq=${boardAll.seq}">${boardAll.title}</a>
+												href="/Board/post?seq=${boardAll.seq}">${boardAll.title}</a>
 										</div>
 										<div class="writer">${boardAll.writer}</div>
 										<div class="date">${boardAll.reg_date}</div>
