@@ -20,6 +20,7 @@ public class CustomerController {
 		
 		@Autowired
 		private HttpSession session;
+		
 	
 		@RequestMapping("signup")
 		public String signup() {
@@ -60,13 +61,12 @@ public class CustomerController {
 			return "redirect:/";
 		}
 		
-		@RequestMapping("mypage")
+		@RequestMapping(value="mypage",produces="text/html;charset=utf8")
 		public String mypage() throws Exception {
 			String SessionID = (String) session.getAttribute("loginID");
 			CustomerDTO dto = (CustomerDTO) dao.memberInfo(SessionID);
 			session.setAttribute("myinfo", dto);
-
-			return "customer/mypage";
+		return "customer/mypage";
 		}
 
 		@RequestMapping("memberOut")
