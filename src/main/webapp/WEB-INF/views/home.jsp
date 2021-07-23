@@ -65,8 +65,13 @@ $(function(){
 	
 	  $("#logout").on("click", function () { //로그아웃 
           alert("로그아웃 되었습니다.")
-          location.href = "/customer/logoutproc"
+          location.href = "/customer/logoutProc"
       });
+	
+	$("#memberOut").on("click", function () { //회원탈퇴
+        alert("정말로 탈퇴하시겠습니까?")
+        location.href = "/customer/memberOut"
+    });
 	
 })
 </script>
