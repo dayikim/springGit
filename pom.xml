@@ -82,7 +82,26 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+<!-- Database Related-->
+		<dependency>
+    <groupId>com.oracle.database.jdbc</groupId>
+    <artifactId>ojdbc8</artifactId>
+    <version>21.1.0.0</version>
+</dependency>
 
+<!-- DBCP -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-dbcp2</artifactId>
+    <version>2.8.0</version>
+</dependency>
+
+<!--SPRING jdbc  -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>${org.springframework-version}</version>
+		</dependency>
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>

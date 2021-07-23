@@ -4,5 +4,27 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="username" value="admin"/>
+		<property name="password" value="dy910910"/>
+		<property name="url" value="jdbc:oracle:thin:@database-1.c538jgljdrrg.ap-northeast-2.rds.amazonaws.com:1521:ORCL"/>
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="initialSize" value="30"/>
+	</bean>
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	<property name="dataSource" ref="dataSource"/>
+	</bean>
 </beans>
+  <!-- semi -->
+   <!--      <Resource 
+    name="jdbc/oracle"
+    auth="Container"
+    type="javax.sql.DataSource"
+    driverClassName="oracle.jdbc.driver.OracleDriver"
+    url="jdbc:oracle:thin:@database-1.c538jgljdrrg.ap-northeast-2.rds.amazonaws.com:1521:ORCL"
+    username="admin"
+    password="dy910910"
+    maxActive="30"
+    />  -->
