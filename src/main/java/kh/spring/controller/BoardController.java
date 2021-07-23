@@ -1,5 +1,6 @@
 package kh.spring.controller;
 
+import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,11 @@ public class BoardController {
 	
 	
 	@RequestMapping("boardlist")
-	public String boardlist() {
+	public String boardlist(Model model) {
 		
+		List<BoardDTO> list = dao.listAll();
 		
+		model.addAttribute("boardAll",list);
 		
 		return "/board/boardlist";
 	}
