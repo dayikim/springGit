@@ -50,8 +50,6 @@ public class CustomerDAO {
 			
 		},SessionID);
 	}
-
-
 	
 	public int memberOut(String SessionID) {
 		String sql="delete from customer where id=?";

@@ -42,9 +42,9 @@
             	<div class = "col-6"></div>
             	<div class = "col-2"></div><a href="/Board/boardlist"><button type="button" class="btn btn-danger">뒤로가기</button></a></div>
             	<c:choose>
-            		<c:when test="${post.writer == loginId}">
-            			<div class = "col-2"><button type="button" class="btn btn-warning">삭제</button></div>
-            			<div class = "col-2"><button type="button" class="btn btn-success">수정</button></div>
+            		<c:when test="${post.writer == loginID}">
+            			<div class = "col-2"><a href="/Board/boardDelete?seq=${post.seq}"><button type="button" class="btn btn-warning">삭제</button></a></div>
+            			<div class = "col-2"><a href="/Board/modifyChoice?seq=${post.seq}"><button type="button" class="btn btn-success">수정</button></a></div>
             		</c:when>
             	</c:choose>	
             </div>
