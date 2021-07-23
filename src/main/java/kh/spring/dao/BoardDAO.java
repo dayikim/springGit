@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -33,6 +35,7 @@ public class BoardDAO {
 		}, seq);
 	}
 	
+
 	public List<BoardDTO> listAll() {
 		//게시판 리스트
 		String sql = "select * from board";
@@ -51,6 +54,11 @@ public class BoardDAO {
 			}
 			
 		});
+	}
+
+	public int write(HttpSession session,String title,String contents) {
+		String sql = "insert into board values(board_seq.nextval,?,?,?,sysdate,0)";
+		return jdbc.update(sql,title,session,contents);
 	}
 	
 

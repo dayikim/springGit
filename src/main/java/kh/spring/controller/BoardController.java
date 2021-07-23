@@ -1,7 +1,7 @@
 package kh.spring.controller;
 
-
 import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,6 +36,13 @@ public class BoardController {
 		model.addAttribute("post",dto);
 		
 		return "/board/view";
+	}
+	
+
+	@RequestMapping("boardWrite")
+	public String boardWrite(HttpSession session, String title, String contents) {
+		dao.write(session,title,contents);
+		return "redirect:boardList";
 	}
 	
 }
