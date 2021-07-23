@@ -214,7 +214,7 @@ a {
 }
 
 .board_list .title {
-    width: 70%;
+    width: 60%;
 }
 
 .board_list .top .title {
@@ -434,8 +434,7 @@ a {
 			<div class="contents">
 				<section class="notice_list">
 					<div class="title">
-						<h2>공지사항</h2>
-						<p>새로운 소식과 이야기를 전합니다</p>
+						<h2>게시글</h2>
 					</div>
 					<div class="board_wrap">
 						<div class="board_title">
@@ -458,7 +457,7 @@ a {
 						<div class="board_list_wrap">
 							<div class="board_list">
 								<div class="top">
-<!-- 									<div class="num">번호</div> -->
+ 									<div class="num">번호</div>
 									<div class="title">제목</div>
 									<div class="writer">글쓴이</div>
 									<div class="date">작성일</div>

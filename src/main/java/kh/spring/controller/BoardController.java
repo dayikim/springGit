@@ -10,6 +10,8 @@ public class BoardController {
 	@RequestMapping("boardlist")
 	public String boardlist() {
 		
+		
+		
 		return "/board/boardlist";
 	}
 	
