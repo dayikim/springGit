@@ -9,11 +9,11 @@ public class BoardDTO {
 	private String writer;
 	private String contents;
 	private Date write_date;
-	private String view_count;
+	private int view_count;
 	
 	public BoardDTO() {}
 	
-	public BoardDTO(int seq, String title, String writer, String contents, Date write_date, String view_count) {
+	public BoardDTO(int seq, String title, String writer, String contents, Date write_date, int view_count) {
 		super();
 		this.seq = seq;
 		this.title = title;
@@ -53,10 +53,10 @@ public class BoardDTO {
 	public void setWrite_date(Date write_date) {
 		this.write_date = write_date;
 	}
-	public String getView_count() {
+	public int getView_count() {
 		return view_count;
 	}
-	public void setView_count(String view_count) {
+	public void setView_count(int view_count) {
 		this.view_count = view_count;
 	}
 	

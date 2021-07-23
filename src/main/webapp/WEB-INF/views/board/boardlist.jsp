@@ -437,23 +437,6 @@ a {
 						<h2>게시글</h2>
 					</div>
 					<div class="board_wrap">
-						<div class="board_title">
-							<form
-								action=""
-								method="get">
-								<div class="search">
-									<input type="hidden" name="cpage" value=1> 
-									<div class="inp_slct">
-										<select	name="category">
-											<option value="title">제목</option>
-											<option value="writer">작성자</option>
-										</select>
-									</div>
-									 <input type="text" name="keyword" class="inpform" placeholder="검색을 입력하세요.">
-									<button class="btn_m btn_default" id="search">검색</button>
-								</div>
-							</form>
-						</div>
 						<div class="board_list_wrap">
 							<div class="board_list">
 								<div class="top">
@@ -468,7 +451,7 @@ a {
 										<input type="hidden" class="num" name="board_seq" value="${boardAll.seq}">
 										<div class="title">
 											<a
-												href="${pageContext.request.contextPath}/noticeView.notice?notice_seq=${boardAll.seq}">${boardAll.title}</a>
+												href="">${boardAll.title}</a>
 										</div>
 										<div class="writer">${boardAll.writer}</div>
 										<div class="date">${boardAll.reg_date}</div>
@@ -479,23 +462,7 @@ a {
 							<div class="board_page">
 								<div class="bt_wrap">
 									<button >글쓰기</button>
-								</div>
-<%-- 								<c:forEach var="i" items="${navi}" varStatus="s"> --%>
-<%-- 									<c:choose> --%>
-<%-- 										<c:when test="${i == '>'}"> --%>
-<!-- 											<a -->
-<%-- 												href="${pageContext.request.contextPath}/board.board?cpage=${navi[s.index-1]+1}&category=${category}&keyword=${keyword}">${i}</a> --%>
-<%-- 										</c:when> --%>
-<%-- 										<c:when test="${i == '<'}"> --%>
-<!-- 											<a -->
-<%-- 												href="${pageContext.request.contextPath}/board.notice?cpage=${navi[s.index+1]-1}&category=${category}&keyword=${keyword}">${i}</a> --%>
-<%-- 										</c:when> --%>
-<%-- 										<c:otherwise> --%>
-<!-- 											<a -->
-<%-- 												href="${pageContext.request.contextPath}/noticeBoard.notice?cpage=${i}&category=${category}&keyword=${keyword}">${i}</a> --%>
-<%-- 										</c:otherwise> --%>
-<%-- 									</c:choose> --%>
-<%-- 								</c:forEach> --%>
+								</div>								
 							</div>
 						</div>
 					</div>
