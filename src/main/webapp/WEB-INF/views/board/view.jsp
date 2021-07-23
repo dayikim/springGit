@@ -7,38 +7,47 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <style>
 	*{box-sizing: border-box;}
-     div{border: 1px solid black;}
-     .container{width: 550px;height: 500px; margin: auto;}
+     .container{width: 550px;height: 300px; margin: auto;}
      .main{height: 35px; text-align: center;line-height: 35px;}
-     .navi{height: 40px; float: left;}
+    /* .navi{height: 40px; float: left;}
      .navi > div{float: left; height: 40px; line-height: 40px; text-align: center;}
      .seq{width: 30px;}
      .title{width: 250px;overflow:hidden;word-wrap:break-word;}
      .writer{width: 100px;}
      .date{width: 100px;}
-     .count{width: 65px;}
-     .contents{height: 365px;}  
-     .file{height: 55px;overflow: scroll;}
-     .footer{height: 45px; line-height: 45px;}    
-     .controller{width: 550px; height: 50px; margin: 10px;}
-     .comment{float: left; width: 450px; height: 100%; textalign: left}
-     .reply{float: left; width: 98px; height: 100%;}
-     #btn{width: 100%; height: 100%;}   
+     .count{width: 65px;} */
+     .contents{height: 200px;}  
+     
 </style>
 <body>
 	<div class="container">
-            <div class="main"><b>자유게시판</b></div>
-            <div class="navi">
-                <div class="seq" id="seq">${post.seq}</div>
-                <div class="title">${post.title}</div>
-                <div class="writer">${post.writer }</div>
-                <div class="date">${post.write_date }</div>
-                <div class="count">${post.view_count }</div>
+		<div class = row>
+            <div class="col-12 main"><b>자유게시판</b></div>
+        </div>
+        <div class = row>
+                <div class="col-1 seq" id="seq">${post.seq}</div>
+                <div class="col-4 title">${post.title}</div>
+                <div class="col-3 writer">${post.writer }</div>
+                <div class="col-3 date">${post.write_date }</div>
+                <div class="col-1 count">${post.view_count }</div>
+        </div>
+        	<div class = row>
+            	<div class="col-12 contents">${post.contents }</div>
+            </div> 
+            <div class="row footer">
+            	<div class = "col-6"></div>
+            	<div class = "col-2"></div><a href="/Board/boardlist"><button type="button" class="btn btn-danger">뒤로가기</button></a></div>
+            	<c:choose>
+            		<c:when test="${post.writer == loginId}">
+            			<div class = "col-2"><button type="button" class="btn btn-warning">삭제</button></div>
+            			<div class = "col-2"><button type="button" class="btn btn-success">수정</button></div>
+            		</c:when>
+            	</c:choose>	
             </div>
-            <div class="contents">${post.contents }</div>
     </div>
 </body>
 </html>
