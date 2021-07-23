@@ -4,17 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/Board")
-public class BoardController {
+@RequestMapping("/Main")
+public class MainController {
 	
-	
-	@RequestMapping("boardlist")
-	public String boardlist() {
-		
-		
-		
-		return "/board/boardlist";
+	@RequestMapping("main")
+	public String main() {
+		return "main/main";
 	}
 }
-	
-
