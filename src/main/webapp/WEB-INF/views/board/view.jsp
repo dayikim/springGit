@@ -35,8 +35,8 @@
                 <div class="seq" id="seq">${post.seq}</div>
                 <div class="title">${post.title}</div>
                 <div class="writer">${post.writer }</div>
-                <div class="date">${post.write_Date }</div>
-                <div class="count">${post.view_Count }</div>
+                <div class="date">${post.write_date }</div>
+                <div class="count">${post.view_count }</div>
             </div>
             <div class="contents">${post.contents }</div>
     </div>
