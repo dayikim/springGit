@@ -21,8 +21,8 @@
         }
         .container {
             border: 1px solid black;
-            width: 400px;
-            height: 500px;
+            width: 300px;
+            height: 400px;
             margin: auto;
         }
 
@@ -56,45 +56,21 @@
 		    position:relative;
         }
         
-     body{
- 				 padding-top: 30px;}
+     body{padding-top: 30px;}
  				 
  	label{font-weight: bold;
  	 }
     </style>
 
     <script>
-	$(function () {
-		document.getElementById("search").onclick = function () {
-			new daum.Postcode({
-				oncomplete: function (data) {
-					let roadAddr = data.roadAddress;
-					document.getElementById("postcode").value = data.zonecode;
-					document.getElementById("add1").value = roadAddr;
-				}
-			}).open();
-		} //우편번호 검사
-
-		//pw 일치 검사
-		let pw = document.getElementById("pw");
-		let pw_check = document.getElementById("pw_check");
-		pw_check.oninput = function () {
-			if (pw.value == pw_check.value) {
-				document.getElementById("result").innerHTML = "비밀번호가 일치합니다."
-				document.getElementById('result').style.color = "blue"
-			} else if (pw.value != pw_check.value) {
-				document.getElementById("result").innerHTML = "비밀번호가 일치하지 않습니다."
-				document.getElementById('result').style.color = "red"
-			}
-		}
-		
+        $(function(){
 		//중복검사 ajax
 		$("#id_input").on("input", function () {
 			if($("#id_input").val()==""){
 				  return;
 			  }
 				 let checkID = $("#id_input").val();
-		$.ajax({url: "/member/duplCheck",
+		$.ajax({url: "/customer/duplCheck",
 			
 				data : {"id":checkID}
 			}).done(function (resp) {
@@ -114,6 +90,8 @@
 			});
 
 		});
+		
+		
 	});
 
     </script>
@@ -121,7 +99,7 @@
 
 <body>
     <div class="container">
-        <form action="/member/signupProc" method="post">
+        <form action="/customer/signupProc" method="post">
 
             <p class="join">회원가입</p>
 
@@ -134,7 +112,7 @@
 
             <label class="name">이름: <input type="text" id="name_input" name=name required></label>
             <label class="phone">전화번호: <input type="text" id="phone_input"name=phone></label>
-            <label class="email">이메일: <input type="text"id="email_input"name="email"></label>
+            <label class="email">이메일: <input type="text"id="email_input"name="email"></label><br>
             
             <input type="submit" class="btn btn-dark" value="회원가입" id="send"> <input type="reset" class="btn btn-dark" value="다시입력" id="reset">
         </form>

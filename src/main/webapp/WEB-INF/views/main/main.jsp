@@ -21,6 +21,15 @@ $(function(){
 		}
 	})
 	
+	$("#mypage").on("click", function(){
+		location.href = "/customer/mypage";
+	})
+
+    $("#logout").on("click", function () { //로그아웃 
+        alert("로그아웃 되었습니다.")
+        location.href = "/customer/logout"
+    });
+	
 })
 
 
