@@ -2,6 +2,9 @@ package kh.spring.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -32,5 +35,40 @@ public class BoardDAO {
 		}, seq);
 	}
 	
+
+	public List<BoardDTO> listAll() {
+		//게시판 리스트
+		String sql = "select * from board";
+		
+		return jdbc.query(sql , new RowMapper<BoardDTO>() {
+			@Override
+			public BoardDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
+				BoardDTO dto = new BoardDTO();
+				dto.setSeq(rs.getInt("seq"));
+				dto.setTitle(rs.getString("title"));
+				dto.setWriter(rs.getString("writer"));
+				dto.setContents(rs.getString("contents"));
+				dto.setWrite_date(rs.getDate("write_date"));
+				dto.setView_count(rs.getInt("view_count"));
+				return dto;
+			}
+			
+		});
+	}
+
+	public int write(HttpSession session,String title,String contents) {
+		String sql = "insert into board values(board_seq.nextval,?,?,?,sysdate,0)";
+		return jdbc.update(sql,title,session,contents);
+	}
+	
+	public int deleteBoard(int seq) {
+		String sql = "delete from board where seq=?";
+		return jdbc.update(sql,seq);
+	}
+	
+	public int updateBoard(BoardDTO db) {
+		String sql = "update set title=?, contents =? write_date = sysdate where seq=?";
+		return jdbc.update(sql,db.getSeq());
+	}
 
 }
