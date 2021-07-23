@@ -11,28 +11,17 @@
 <script>
 
 $(function(){
-	
 	$(".btn").on("click", function(){
 		switch ($(this).attr("id")) {
-		case "mypage": console.log($(this).text()); break;
+		case "mypage": location.href ="/customer/mypage"; break;
 		case "board": location.href = "/Board/boardlist";  break;
-		case "logout":console.log($(this).text());  break;
+		case "logout":
+			alert("로그아웃 되었습니다.")
+			location.href = "/customer/logout";
 		case "etc": console.log($(this).text());  break;
 		}
 	})
-	
-	$("#mypage").on("click", function(){
-		location.href = "/customer/mypage";
-	})
-
-    $("#logout").on("click", function () { //로그아웃 
-        alert("로그아웃 되었습니다.")
-        location.href = "/customer/logout"
-    });
-	
 })
-
-
 </script>
 </head>
 <body>

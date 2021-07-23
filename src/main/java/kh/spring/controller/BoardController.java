@@ -50,6 +50,28 @@ public class BoardController {
 		return "redirect:boardList";
 	}
 	
+	@RequestMapping("boardDelete")
+	public String deleteBoard(int seq) {
+		dao.deleteBoard(seq);
+		return "redirect:/Board/boardlist";
+	}
+	
+	@RequestMapping("modifyChoice")
+	public String modifyChoice(int seq, Model m) {
+		m.addAttribute("beforeBoard",dao.getSelect(seq));
+		return "board/modifyForm";
+	}
+	
+	@RequestMapping("boardModified")
+	public String modifyBoard(String modify_seq,String modify_title, String modify_contents) {
+		BoardDTO temp  =  new BoardDTO();
+		temp.setSeq(Integer.parseInt(modify_seq));
+		temp.setTitle(modify_title);
+		temp.setContents(modify_contents);
+		dao.updateBoard(temp);
+		return "redirect:/Board/post?seq="+modify_seq;
+	}
+	
 }
 	
 
