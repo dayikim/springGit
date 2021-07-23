@@ -3,6 +3,8 @@ package kh.spring.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -30,6 +32,11 @@ public class BoardDAO {
 				return dto;
 			}
 		}, seq);
+	}
+	
+	public int write(HttpSession session,String title,String contents) {
+		String sql = "insert into board values(board_seq.nextval,?,?,?,sysdate,0)";
+		return jdbc.update(sql,title,session,contents);
 	}
 	
 
