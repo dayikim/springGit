@@ -15,7 +15,7 @@ $(function(){
 	$(".btn").on("click", function(){
 		switch ($(this).attr("id")) {
 		case "mypage": console.log($(this).text()); break;
-		case "board": console.log($(this).text());  break;
+		case "board": location.href = "/Board/boardlist";  break;
 		case "logout":console.log($(this).text());  break;
 		case "etc": console.log($(this).text());  break;
 		}

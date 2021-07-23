@@ -61,5 +61,14 @@ public class BoardDAO {
 		return jdbc.update(sql,title,session,contents);
 	}
 	
+	public int deleteBoard(int seq) {
+		String sql = "delete from board where seq=?";
+		return jdbc.update(sql,seq);
+	}
+	
+	public int updateBoard(BoardDTO db) {
+		String sql = "update set title=?, contents =? write_date = sysdate where seq=?";
+		return jdbc.update(sql,db.getSeq());
+	}
 
 }
