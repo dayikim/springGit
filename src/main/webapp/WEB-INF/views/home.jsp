@@ -63,47 +63,16 @@ $(function(){
 		location.href = "/customer/signup";
 	})
 	
-	  $("#logout").on("click", function () { //로그아웃 
-          alert("로그아웃 되었습니다.")
-          location.href = "/customer/logoutProc"
-      });
 	
-	$("#memberOut").on("click", function () { //회원탈퇴
-        alert("정말로 탈퇴하시겠습니까?")
-        location.href = "/customer/memberOut"
-    });
 	
 })
 </script>
 <body>
-	<c:choose>
-		<c:when test="${login!=null }">
-
-			<table class="table col-8" height=100px id="table">
-				<thead>
-					<tr>
-						<th colspan=6 id="login_name">환영합니다. ${login.name}님!
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="col"><button type="button" class="btn btn-dark"
-								id="toBoard">게시판</button>
-						<th scope="col"><button type="button" class="btn btn-dark"
-								id="mypage">마이페이지</button>
-						<th scope="col"><button type="button" class="btn btn-dark"
-								id="logout">로그아웃</button>
-					</tr>
-				</tbody>
-			</table>
-
-		</c:when>
-		<c:otherwise>
 				<form action="/customer/loginProc" method="post">
 
 					<table border=1 align=center>
 						<tr>
-							<th>Login BoX
+							<th>Login Box
 						</tr>
 						<tr>
 							<td>ID: <input type=text name=id placeholder="ID를 입력해주세욘">
@@ -119,7 +88,5 @@ $(function(){
 						</tr>
 					</table>
 				</form>
-		</c:otherwise>
-	</c:choose>
 </body>
 </html>

@@ -44,10 +44,14 @@ public class CustomerController {
 			
 			int result = dao.login(id,pw);
 			System.out.println(result);
+			
 			if(result>0) {
 				session.setAttribute("loginID", id);
+			 return "redirect:/Main/main";
+
+			}else {
+				return "redirect:/"; 
 			}
-			return "redirect:/Main/main";
 		}
 		
 		@RequestMapping("logout")
